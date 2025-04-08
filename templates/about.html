@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About | CodeZen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" data-aos="fade-up">
+        <h1>About Our Project</h1>
+        <p><strong>CodeZen</strong> is a smart code analysis tool designed to improve code quality and performance.
+            It assists users by detecting bugs or optimizing code using advanced language models.
+            Built for ease of use, it ensures fast, reliable, and secure code feedback.</p>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li>Find and fix Bugs</li>
+            <li>Optimize code</li>
+            <li>User-friendly interface</li>
+        </ul>
+
+        <h2>Technology Stack</h2>
+        <ul>
+            <li><strong>Model:</strong> llama3.2:7b via Ollama server</li>
+            <li><strong>Backend:</strong> Python Flask</li>
+            <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+        </ul>
+
+        <h2>Our Mission</h2>
+        <p>To simplify the debugging process and make code improvement effortless for everyone.</p>
+
+        <h2>Meet the Team</h2>
+        <ul>
+            <li><strong>Jinay Shah</strong> - 21BCP175</li>
+            <li><strong>Maahi Patel</strong> - 21BCP216</li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>

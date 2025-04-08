@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Fixer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- AOS CDN -->
+
+    <style>
+        .branding {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 50px 0 30px;
+        }
+
+        .branding img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .title {
+            font-size: 5rem;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(90deg, #00c3ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .container h2 {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .title {
+                font-size: 3rem;
+            }
+
+            .branding img {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Branding Section -->
+    <div class="branding" data-aos="fade-up">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="CodeZen Logo">
+        <div class="title" data-aos="zoom-in">CodeZen</div>
+    </div>
+
+    <div class="container" data-aos="fade-up">
+        <h2>Enter your code:</h2>
+        <form id="code-form" method="POST" data-aos="fade-up" data-aos-delay="200">
+            <textarea id="code-input" name="code" rows="10" cols="50" placeholder="Paste your code here..."></textarea><br>
+            <div class="button-group" data-aos="fade-up" data-aos-delay="300">
+                <button type="submit" formaction="/bug_fixing">Find Bugs</button>
+                <button type="submit" formaction="/code_optimization">Optimize Code</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

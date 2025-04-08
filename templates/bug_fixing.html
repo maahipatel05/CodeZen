@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        pre {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 90%;
+            width: 800px;
+            text-align: justify;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            background: linear-gradient(90deg, #0072ff, #00c6ff);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #0052cc, #00aaff);
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #0072ff;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>Processed Code:</h2>
+    <pre><code id="code-output">{{ corrected_code }}</code></pre>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    <a href="/">← Back to Home</a>
+
+    <script>
+        function copyToClipboard() {
+            const codeText = document.getElementById("code-output").innerText;
+            navigator.clipboard.writeText(codeText).then(() => {
+                alert("Code copied to clipboard!");
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+        }
+    </script>
+</body>
+</html>

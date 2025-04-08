@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Methodology | CodeZen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container" data-aos="fade-up">
+        <h1>Methodology</h1>
+
+        <h2>1. Objective</h2>
+        <p>
+            The goal of this project is to develop a smart code assistant that can analyze any code to either identify bugs and correct them or optimize the code for better time and space complexity. This assistant is designed with usability, automation, and intelligent feedback in mind.
+        </p>
+
+        <h2>2. Backend Intelligence: LLaMA 3.2:7B Model</h2>
+        <p>
+            At the heart of this application is the <strong>LLaMA 3.2:7B</strong> model, a powerful open-weight language model. The model runs locally and is accessed via a RESTful API provided by <code>Ollama</code>. 
+            The prompt dynamically adapts based on user selection: 
+        </p>
+        <ul>
+            <li><strong>Bug Finder Mode:</strong> “Find bugs in this code and give the correct version.”</li>
+            <li><strong>Optimizer Mode:</strong> “Optimize the given code for best time and space complexity.”</li>
+        </ul>
+
+        <h2>3. Flask-based Backend</h2>
+        <p>
+            The backend is built using <strong>Flask</strong>, a lightweight and flexible Python web framework. The Flask server handles:
+        </p>
+        <ul>
+            <li>Receiving code input and task type from the frontend</li>
+            <li>Sending the prompt to the LLaMA model</li>
+            <li>Returning the model’s response back to the frontend</li>
+        </ul>
+
+        <h2>4. Interactive Frontend</h2>
+        <p>
+            The user interface is designed for simplicity and clarity. It provides a text area for code input, along with options to choose between bug detection or optimization. The processed result is displayed clearly for easy comparison and understanding.
+        </p>
+
+        <h2>5. CI/CD with GitHub Actions</h2>
+        <p>
+            To maintain code quality and streamline development, <strong>GitHub Actions</strong> is used for Continuous Integration and Continuous Deployment (CI/CD). Every push or pull request triggers automated checks to ensure that:
+        </p>
+        <ul>
+            <li>Code adheres to formatting and style guidelines</li>
+            <li>Tests are passed before deployment</li>
+            <li>Deployments are automated</li>
+        </ul>
+
+        <h2>6. Dockerization and Deployment</h2>
+        <p>
+            To ensure platform independence and ease of deployment, the entire application — including the Flask server and its dependencies — is packaged into a <strong>Docker container</strong>. This image is then <strong>pushed to Docker Hub</strong> for public access. Users can pull the image and run the entire app with a single command, reducing setup friction and enhancing reproducibility.
+        </p>
+        <p>
+            This approach enables seamless deployment across different environments, whether local, cloud-based, or within educational labs.
+        </p>
+
+        <h2>7. Local Model Deployment</h2>
+        <p>
+            The application avoids reliance on third-party APIs by running the LLaMA model locally. This ensures data privacy, minimal latency, and full control over inference behavior — a significant advantage in real-world deployments.
+        </p>
+
+        <h2>8. Summary</h2>
+        <p>
+            This methodology blends AI and software engineering best practices into a single cohesive application. By combining a powerful LLM with a user-friendly Flask interface, Docker-based deployment, and CI/CD automation, the project delivers a robust and production-ready tool that showcases real-world development practices and technical maturity.
+        </p>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
